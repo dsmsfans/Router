@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Router</title>
+
+    <!-- css -->
+    
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div>
+                <ul>
+                    <!-- navigation menu -->
+                    <li><a href="/Add/add.html">Add Router</a></li>
+                    <li><a href="/Search/search.html">Search Router</a></li>
+                </ul>
+            </div>
+        </div><!-- /.container -->
+    </nav>
+    <section>
+        <div class="container">
+            <form action = "/Search_page" method="get">
+                Brand
+                <select name="Brand">
+                    <option value="Buffalo">Buffalo</option>
+                    <option value="NEC">NEC</option>
+                    <option value="ELECOM">ELECOM</option>
+                    <option value="IO-DATA">IO-DATA</option>
+                </select><br>
+                Model
+                <input type="text" name="Model"><br>
+                Type
+                <select name="Type">
+                    <option value="Router">Router</option>
+                    <option value="Extender">Extender</option>
+                    <option value="MeshRoot">MeshRoot</option>
+                    <option value="MeshA">MeshA</option>
+                    <option value="MeshB">MeshB</option>
+                </select><br>
+                Network Type
+                <select name="Network Type">
+                    <option value="R1">R1</option>
+                    <option value="R2">R2</option>
+                    <option value="R3">R3</option>
+                    <option value="R4">R4</option>
+                </select><br>
+                Diamond Mode
+                <select name="Diamond mode">
+                    <option value="Baseline">Baseline</option>
+                    <option value="Normal">Normal</option>
+                    <option value="X-mode">X-mode</option>
+                    <option value="Compatibility">Compatibility</option>
+                </select><br>
+                Interface
+                <input type="radio" name="Interface" value="Wired">Wired
+                <input type="radio" name="Interface" value="Wifi">Wi-Fi<br>
+                Result
+                <input type="radio" name="Result" value="Pass">Pass
+                <input type="radio" name="Result" value="Fail">Fail<br>
+                <input type="submit" value="Submit">
+            </form>
+        </div><!-- /.container -->
+    </section>
+
+    
+
+    <footer>
+        <div class="container">
+            
+        </div>
+    </footer>
+
+    <!-- script -->
+    
+</body>
+</html>
