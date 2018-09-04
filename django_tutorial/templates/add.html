@@ -1,107 +1,156 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Router</title>
 
     <!-- css -->
-    
+
 </head>
+
 <body>
-    <nav>
-        <div class="container">
-            <div>
-                <ul>
-                    <!-- navigation menu -->
-                    <li><a href="/Add/add.html">Add Router</a></li>
-                    <li><a href="/Search/search.html">Search Router</a></li>
-                </ul>
-            </div>
-        </div><!-- /.container -->
-    </nav>
     <section>
         <div class="container">
-            <form action = "/Add_page" method="get">
-                Brand
-                <select name="Brand" required="required">
-                    <option value="Buffalo">Buffalo</option>
-                    <option value="NEC">NEC</option>
-                    <option value="ELECOM">ELECOM</option>
-                    <option value="IO-DATA">IO-DATA</option>
-                </select><br>
-                Model
-                <input type="text" name="Model" required="required"><br>
-                Type
-                <select name="Type" required="required">
-                    <option value="Router">Router</option>
-                    <option value="Extender">Extender</option>
-                    <option value="MeshRoot">MeshRoot</option>
-                    <option value="MeshA">MeshA</option>
-                    <option value="MeshB">MeshB</option>
-                </select><br>
-                Network Type
-                <select name="Network Type" required="required">
-                    <option value="R1">R1</option>
-                    <option value="R2">R2</option>
-                    <option value="R3">R3</option>
-                    <option value="R4">R4</option>
-                </select><br>
-                Diamond Mode
-                <select name="Diamond mode" required="required">
-                    <option value="Baseline">Baseline</option>
-                    <option value="Normal">Normal</option>
-                    <option value="X-mode">X-mode</option>
-                    <option value="Compatibility">Compatibility</option>
-                </select><br>
-                Interface
-                <input type="radio" name="Interface" value="Wired" required="required">Wired
-                <input type="radio" name="Interface" value="Wifi" required="required">Wi-Fi<br>
-                Result
-                <input type="radio" name="Result" value="Pass" required="required">Pass
-                <input type="radio" name="Result" value="Fail" required="required">Fail<br>
-                Speed test<br>
-                ping
-                <input type="text" name="ping" required="required">(ms)<br>
-                DL speed
-                <input type="text" name="DL" required="required">(Mbps)<br>
-                UL speed
-                <input type="text" name="PUL" required="required">(Mbps)<br>
-                FTP<br>
-                DL speed
-                <input type="text" name="FTPDL" required="required">(Mbps)<br>
-                Iperf<br>
-                Jitter
-                <input type="text" name="Jitter" required="required"><br>
-                loss
-                <input type="text" name="loss" required="required">%<br>
-                Ping<br>
-                loss
-                <input type="text" name="ping loss" required="required">%<br>
-                wrs21
-                <input type="radio" name="wrs21" value="Pass" required="required">Pass
-                <input type="radio" name="wrs21" value="Fail" required="required">Fail<br>
-                Streaming
-                <input type="radio" name="Streaming" value="Pass" required="required">Pass
-                <input type="radio" name="Streaming" value="Fail" required="required">Fail<br>
-                Note
-                <input type="text" name="Note"><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div><!-- /.container -->
+            <form action="/Add_page" method="get">
+                <div>
+
+                    <div style="height: 80px; text-align: center; line-height: 40px">
+                        <li>
+                            <a href="/Add/add.html">Add Router</a>
+                        </li>
+                        <li>
+                            <a href="/Search/search.html">Search Router</a>
+                        </li>
+                    </div>
+
+                    <div style="width:33%; height:326px;line-height:20px; float:left;">
+                        <fieldset>
+                            <legend>Data</legend>
+                            Brand
+                            <br>
+                            <select name="Brand" required="required">
+                                <option value="Buffalo">Buffalo</option>
+                                <option value="NEC">NEC</option>
+                                <option value="ELECOM">ELECOM</option>
+                                <option value="IO-DATA">IO-DATA</option>
+                            </select>
+                            <br> Model
+                            <br>
+                            <input type="text" name="Model" required="required">
+                            <br> Type
+                            <br>
+                            <select name="Type" required="required">
+                                <option value="Router">Router</option>
+                                <option value="Extender">Extender</option>
+                                <option value="MeshRoot">MeshRoot</option>
+                                <option value="MeshA">MeshA</option>
+                                <option value="MeshB">MeshB</option>
+                            </select>
+                            <br> Network Type
+                            <br>
+                            <select name="Network Type" required="required">
+                                <option value="R1">R1</option>
+                                <option value="R2">R2</option>
+                                <option value="R3">R3</option>
+                                <option value="R4">R4</option>
+                            </select>
+                            <br> Diamond Mode
+                            <br>
+                            <select name="Diamond mode" required="required">
+                                <option value="Baseline">Baseline</option>
+                                <option value="Normal">Normal</option>
+                                <option value="X-mode">X-mode</option>
+                                <option value="Compatibility">Compatibility</option>
+                            </select>
+                            <br> Interface
+                            <br>
+                            <input type="radio" name="Interface" value="Wired" required="required">Wired
+                            <input type="radio" name="Interface" value="Wifi" required="required">Wi-Fi
+                            <br> Result
+                            <br>
+                            <input type="radio" name="Result" value="Pass" required="required">Pass
+                            <input type="radio" name="Result" value="Fail" required="required">Fail
+                            <br>
+                    </div>
+
+                    </fieldset>
+                </div>
+                <div style="width:33%; height:326px; line-height:20px; float:right;">
+                    <fieldset style="height: 305px;">
+                        <legend>Iperf_test</legend>
+                        Jitter
+                        <br>
+                        <input type="text" name="Jitter" required="required">
+                        <br> loss
+                        <br>
+                        <input type="text" name="loss" required="required">%
+                        <br> Ping loss
+                        <br>
+                        <input type="text" name="ping loss" required="required">%
+                        <br> wrs21
+                        <br>
+                        <input type="radio" name="wrs21" value="Pass" required="required">Pass
+                        <input type="radio" name="wrs21" value="Fail" required="required">Fail
+                        <br> Streaming
+                        <br>
+                        <input type="radio" name="Streaming" value="Pass" required="required">Pass
+                        <input type="radio" name="Streaming" value="Fail" required="required">Fail
+                        <br> Note
+                        <br>
+                        <input type="text" name="Note">
+                        <br>
+                    </fieldset>
+                </div>
+                <div style="margin-left:33%; margin-right:33%; height:326px; line-height:20px;">
+                    <fieldset style="height: 305px;">
+                        <legend>Speed test</legend>
+                        ping
+                        <br>
+                        <input type="text" name="ping" required="required">(ms)
+                        <br> DL speed
+                        <br>
+                        <input type="text" name="DL" required="required">(Mbps)
+                        <br> UL speed
+                        <br>
+                        <input type="text" name="PUL" required="required">(Mbps)
+                        <br> FTP
+                        <br> DL speed
+                        <br>
+                        <input type="text" name="FTPDL" required="required">(Mbps)
+                    </fieldset>
+                </div>
+
+
+
+                <div style="clear:both; background-color:#FFD4D4; height:80px; text-align:center; line-height:80px;">
+                    <input type="submit" value="Submit">
+                </div>
+        </div>
+
+
+
+
+
+        </form>
+        </div>
+        <!-- /.container -->
     </section>
 
-    
+
 
     <footer>
         <div class="container">
-            
+
         </div>
     </footer>
 
     <!-- script -->
-    
+
 </body>
+
 </html>

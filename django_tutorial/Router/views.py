@@ -14,10 +14,13 @@ Title = ['時間戳記','Brand','Model','Type','Network Type','Diamond Mode','In
 Add_list = []
 option = data["Result"] != None
 
-def Search_page(request):
-    return render(request, 'search.html')
+def home_page(request):
+    return render(request, 'home.html')
 
-def Add_page(request):
+# def Search_page(request):
+#     return render(request, 'search.html')
+
+# def Add_page(request):
     return render(request, 'add.html')
 
 def add(request): 
@@ -110,6 +113,7 @@ def search(request):
     global option
     option = data["Result"] != None
     request.encoding='utf-8'
+    print('DADASFFFF')
     #Brand
     if 'Brand' in request.GET:
         option = option & data["Brand"].str.contains(request.GET['Brand'])
@@ -137,10 +141,8 @@ def search(request):
     #Result
     if 'Result' in request.GET:
         option = option & data["Result"].str.contains(request.GET['Result'])
-        
-    return HttpResponse(data.loc[option].to_html())
 
-    
+    return HttpResponse(data.loc[option].to_html()) 
 
 def data_toexcel():
     global data
@@ -148,3 +150,8 @@ def data_toexcel():
     data = data.append(output,ignore_index=True)
     data.to_excel('Japan_test.xlsx',na_rep=True,index=False)
     Add_list.clear()
+
+def show_data(request):
+    return HttpResponse(data.to_html())
+    
+    

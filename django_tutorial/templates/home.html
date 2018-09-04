@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Diamond Router GUI</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css' %}">
+
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'device-mockups/device-mockups.min.css' %}">
+
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/new-age.min.css' %}">
+
+
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Router Test</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#download">Add Router</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#features">Search Router</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Show Router</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">
+              Website for Router Add and Search
+            </h1>
+            <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start to Search</a>
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto">
+          <div class="device-container">
+            <div class="device-mockup iphone6_plus portrait white">
+              <div class="device">
+                <div class="screen">
+                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                </div>
+                <div class="button">
+                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="download bg-primary text-center" id="download">
+    <div class="container">
+      <form action="/Add" method="get">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Add</h2>
+            <br>
+            <div class="badges">
+            </div>
+          </div>
+        </div>
+        <div style="width:25%; height:326px;line-height:20px; float:left;">
+            <legend>Data</legend>
+            <br> Brand
+            <br>
+            <select name="Brand" required="required">
+              <option value="Buffalo">Buffalo</option>
+              <option value="NEC">NEC</option>
+              <option value="ELECOM">ELECOM</option>
+              <option value="IO-DATA">IO-DATA</option>
+            </select>
+            <br>
+            <br> Model
+            <br>
+            <input type="text" name="Model" required="required" class="input">
+            <br>
+            <br> Type
+            <br>
+            <select name="Type" required="required">
+              <option value="Router">Router</option>
+              <option value="Extender">Extender</option>
+              <option value="MeshRoot">MeshRoot</option>
+              <option value="MeshA">MeshA</option>
+              <option value="MeshB">MeshB</option>
+            </select>
+            <br>
+            <br> Network Type
+            <br>
+            <select name="Network Type" required="required">
+              <option value="R1">R1</option>
+              <option value="R2">R2</option>
+              <option value="R3">R3</option>
+              <option value="R4">R4</option>
+            </select>
+            <br>
+            <br> Diamond Mode
+            <br>
+            <select name="Diamond mode" required="required">
+              <option value="Baseline">Baseline</option>
+              <option value="Normal">Normal</option>
+              <option value="X-mode">X-mode</option>
+              <option value="Compatibility">Compatibility</option>
+            </select>
+            <br>
+            <br> Interface
+            <br>
+            <input type="radio" name="Interface" value="Wired" required="required">Wired
+            <input type="radio" name="Interface" value="Wifi" required="required">Wi-Fi
+            <br>
+            <br> Result
+            <br>
+            <input type="radio" name="Result" value="Pass" required="required">Pass
+            <input type="radio" name="Result" value="Fail" required="required">Fail
+            <br>
+        </div>
+    </div>
+    <div style="width:33%; height:326px; line-height:20px; float:right;">
+        <legend>Iperf test</legend>
+        <br> Jitter
+        <br>
+        <input type="text" name="Jitter" required="required">
+        <br>
+        <br> loss(%)
+        <br>
+        <input type="text" name="loss" required="required">
+        <br>
+        <br> Ping loss(%)
+        <br>
+        <input type="text" name="ping loss" required="required">
+        <br>
+        <br> wrs21
+        <br>
+        <input type="radio" name="wrs21" value="Pass" required="required">Pass
+        <input type="radio" name="wrs21" value="Fail" required="required">Fail
+        <br>
+        <br> Streaming
+        <br>
+        <input type="radio" name="Streaming" value="Pass" required="required">Pass
+        <input type="radio" name="Streaming" value="Fail" required="required">Fail
+        <br>
+        <br> Note
+        <br>
+        <input type="text" name="Note">
+        <br>
+    </div>
+    <div style="margin-left:33%; margin-right:33%; height:326px; line-height:20px;">
+        <legend>Speed test</legend>
+        <br> ping(ms)
+        <br>
+        <input type="text" name="ping" required="required">
+        <br>
+        <br> DL speed(Mbps)
+        <br>
+        <input type="text" name="DL" required="required">
+        <br>
+        <br> UL speed(Mbps)
+        <br>
+        <input type="text" name="PUL" required="required">
+        <br>
+        <br> FTP
+        <br> DL speed(Mbps)
+        <br>
+        <input type="text" name="FTPDL" required="required">
+    </div>
+    <div style="clear:both; height:50px; text-align:center; line-height:20px; padding-top: 150px">
+      <input type="submit" value="Submit" style="border-radius:  300px;background: transparent; padding: 8px" >
+    </div>
+    </form>
+
+    </div>
+
+
+  </section>
+
+
+
+  <section class="features" id="features">
+    <div class="container">
+      <form action="/Search" method="get">
+        <div class="section-heading text-center">
+          <h2>Search</h2>
+        </div>
+        <div style="margin-left: 33%; margin-right: 33%; text-align: center">
+          Brand
+          <br>
+          <select name="Brand">
+            <option value="Buffalo">Buffalo</option>
+            <option value="NEC">NEC</option>
+            <option value="ELECOM">ELECOM</option>
+            <option value="IO-DATA">IO-DATA</option>
+          </select>
+          <br>
+          <br> Model
+          <br>
+          <input type="text" name="Model">
+          <br>
+          <br> Type
+          <br>
+          <select name="Type">
+            <option value="Router">Router</option>
+            <option value="Extender">Extender</option>
+            <option value="MeshRoot">MeshRoot</option>
+            <option value="MeshA">MeshA</option>
+            <option value="MeshB">MeshB</option>
+          </select>
+          <br>
+          <br> Network Type
+          <br>
+          <select name="Network Type">
+            <option value="R1">R1</option>
+            <option value="R2">R2</option>
+            <option value="R3">R3</option>
+            <option value="R4">R4</option>
+          </select>
+          <br>
+          <br> Diamond Mode
+          <br>
+          <select name="Diamond mode">
+            <option value="Baseline">Baseline</option>
+            <option value="Normal">Normal</option>
+            <option value="X-mode">X-mode</option>
+            <option value="Compatibility">Compatibility</option>
+          </select>
+          <br>
+          <br> Interface
+          <br>
+          <input type="radio" name="Interface" value="Wired">Wired
+          <input type="radio" name="Interface" value="Wifi">Wi-Fi
+          <br>
+          <br> Result
+          <br>
+          <input type="radio" name="Result" value="Pass">Pass
+          <input type="radio" name="Result" value="Fail">Fail
+          <br>
+          <br>
+          <input type="submit" value="Submit" style="border-radius:  300px;background: transparent; padding: 8px">
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+
+  <section class="cta" id="contact">
+    <div class="cta-content">
+      <div class="container">
+        <a href="/Show" class="btn btn-outline btn-xl js-scroll-trigger" type="submit">Show Full DataBase</a>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </section>
+
+
+  <section class="contact bg-primary">
+    <div class="container">
+      <h2>I Hate HTML</h2>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Router Website 2018. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Diamond</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Casper</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Design</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script type="text/javascript" src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script type="text/javascript" src="{% static 'js/new-age.min.js' %}"></script>
+
+</body>
+
+</html>
